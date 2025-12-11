@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<title>Vos ✨</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  body { margin:0; height:100vh; overflow:hidden; font-family: Georgia, serif; color:white; display:flex; align-items:center; justify-content:center; background: radial-gradient(circle at center, #12003a, #060012, #0e002a); }
+  .stars { position:fixed; inset:0; background: url('https://i.ibb.co/4RwpQVG/stars.png') repeat; animation: brillar 6s infinite alternate; opacity:0.85; z-index:0; }
+  @keyframes brillar { 0%{ opacity:0.35; filter:blur(0px);} 100%{ opacity:1; filter:blur(1px);} }
+  .scene { position:relative; width:100%; max-width:1000px; height:100vh; display:flex; align-items:center; justify-content:center; z-index:2; }
+  .planet { width:220px; height:220px; border-radius:50%; background: radial-gradient(circle, #ffe89c, #ffb347, #ff4500, #8b0000); box-shadow: 0 0 60px rgba(255,100,10,0.9); position:relative; z-index:3; }
+  /* orbit container to center text that rotates around */
+  .orbit { position:absolute; top:50%; left:50%; transform-origin: center -300px; animation: orbit 14s linear infinite; font-size:22px; white-space:nowrap; text-shadow: 0 2px 6px rgba(0,0,0,0.6); }
+  @keyframes orbit { from{ transform: rotate(0deg) translate(-300px) rotate(0deg);} to{ transform: rotate(360deg) translate(-300px) rotate(-360deg);} }
+  /* create several orbit layers with staggered durations and delays for variety */
+  .orbit.o2{ transform-origin: center -260px; animation-duration:11s; font-size:20px; }
+  .orbit.o3{ transform-origin: center -220px; animation-duration:9s; font-size:18px; }
+  .orbit.o4{ transform-origin: center -340px; animation-duration:17s; font-size:20px; }
+  .star-glow { display:inline-block; margin-left:8px; filter: drop-shadow(0 0 8px rgba(255,200,200,0.6)); }
+  .final { position: absolute; bottom:60px; width:100%; text-align:center; font-size:26px; opacity:0; animation: aparecer 2.5s ease forwards 1s; z-index:4; }
+  @keyframes aparecer { to { opacity:1; } }
+  .btns { position: absolute; bottom:16px; width:100%; text-align:center; z-index:4; }
+  .btn { background: rgba(0,0,0,0.35); color:white; border:1px solid rgba(255,255,255,0.12); padding:10px 14px; border-radius:10px; cursor:pointer; margin:6px; }
+  @media (max-width:600px){ .orbit{ font-size:16px; } .planet{ width:160px; height:160px; } }
+</style>
+</head>
+<body>
+
+<div class="stars"></div>
+
+<div class="scene">
+  <div class="planet" aria-hidden="true"></div>
+
+  <div class="orbit" style="animation-delay:0s;">Amo tus ojos <span class="star-glow">✨</span></div>
+  <div class="orbit o2" style="animation-delay:1.2s;">Amo tu sonrisa <span class="star-glow">✨</span></div>
+  <div class="orbit o3" style="animation-delay:2.4s;">Me hacés feliz <span class="star-glow">✨</span></div>
+  <div class="orbit o4" style="animation-delay:3.6s;">Sos el amor de mi vida💘 <span class="star-glow">💫</span></div>
+  <div class="orbit" style="animation-delay:4.8s;">Amo tu pelo <span class="star-glow">✨</span></div>
+  <div class="orbit o2" style="animation-delay:6s;">Gracias por existir <span class="star-glow">✨</span></div>
+  <div class="orbit o3" style="animation-delay:7.2s;">Te pienso siempre <span class="star-glow">✨</span></div>
+  <div class="orbit o4" style="animation-delay:8.4s;">Me encanta tu forma de ser😍 <span class="star-glow">✨</span></div>
+  <div class="orbit" style="animation-delay:9.6s;">Sos única <span class="star-glow">✨</span></div>
+  <div class="orbit o2" style="animation-delay:10.8s;">Te amo con todo mi corazón💘 <span class="star-glow">💖</span></div>
+
+  <div class="final">Te amo mucho mucho mi vida entera 💘</div>
+
+  <div class="btns">
+    <button class="btn" onclick="location.href='carta.html'">Volver</button>
+  </div>
+</div>
+
+</body>
+</html>
